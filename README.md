@@ -37,7 +37,8 @@ use({
 ```
 
 ### Vim-plug
-```
+```vim
 Plug 'mealet/zeen-nvim'
+
 require("zeen-lsp").setup()
 ```
