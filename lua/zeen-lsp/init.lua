@@ -20,6 +20,14 @@ end
 function M.setup(opts)
     opts = opts or {}
 
+    vim.filetype.add({
+        extension = {
+            zn = "zeen",
+        },
+    })
+
+    require("zeen-lsp.treesitter").setup()
+
     vim.api.nvim_create_autocmd("FileType", {
         pattern = "zeen",
         callback = function(args)
