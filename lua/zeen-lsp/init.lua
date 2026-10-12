@@ -38,7 +38,7 @@ function M.setup(opts)
             end
 
             local bufname = vim.api.nvim_buf_get_name(args.buf)
-            local root_dir = vim.fs.root(bufname, opts.root_markers or { ".git" })
+            local root_dir = vim.fs.root(bufname, opts.root_markers or { ".git", "Zora.toml", "Zora.lock" })
                 or vim.fs.dirname(bufname)
 
             vim.lsp.start({

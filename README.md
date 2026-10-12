@@ -17,7 +17,11 @@ return {
     "mealet/zeen-nvim",
     opts = {
         cmd = { "zeen-lsp" },
-        root_markers = { ".git" },
+        root_markers = {
+            ".git",
+            "Zora.toml",
+            "Zora.lock",
+        },
         inlay_hints = true,
     },
     config = function(_, opts)
