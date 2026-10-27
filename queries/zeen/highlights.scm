@@ -22,9 +22,11 @@
   "link"
 
   "struct"
+  "switch"
   "typeof"
   "use"
   "while"
+  "comptime"
 ] @keyword
 
 (visibility) @keyword
@@ -37,6 +39,7 @@
 ; Types
 
 (builtin_type) @type.builtin
+(comptime_type) @type.builtin
 (self_type) @type.builtin
 type: (identifier) @type
 
@@ -59,6 +62,27 @@ type: (identifier) @type
 
 (alias_declaration
   name: (identifier) @type)
+
+(comptime_const_declaration
+  name: (identifier) @constant)
+
+(comptime_function_declaration
+  name: (identifier) @function)
+
+(comptime_struct_declaration
+  name: (identifier) @type)
+
+(quoted_fn_declaration
+  name: (quoted_name (identifier) @function))
+
+(quoted_struct_declaration
+  name: (quoted_name (identifier) @type))
+
+(quoted_alias_declaration
+  name: (quoted_name (identifier) @type))
+
+(splice_expression
+  "$" @punctuation.special)
 
 (let_declaration
   name: (identifier) @variable)
